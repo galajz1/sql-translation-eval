@@ -1,0 +1,293 @@
+# Each case: an Oracle query (source of truth), a verified Trino reference,
+# and (for traps) a plausible naive translation that RUNS but returns
+# different results. validate_cases.py checks all three against the data.
+#
+# kind: control | trap
+# ordered: true if row order is part of the result
+# trap_keywords: crude signals that a model's stated risks mention this trap
+
+- id: control_status_counts
+  kind: control
+  description: Simple GROUP BY
+  oracle_sql: |
+    SELECT permit_type, status, COUNT(*) AS n
+    FROM permits
+    GROUP BY permit_type, status
+  reference_sql: |
+    SELECT permit_type, status, COUNT(*) AS n
+    FROM permits
+    GROUP BY permit_type, status
+
+- id: control_fees_by_neighborhood
+  kind: control
+  description: NVL to COALESCE with SUM
+  oracle_sql: |
+    SELECT neighborhood, SUM(NVL(fee_amount, 0)) AS total_fees
+    FROM permits
+    WHERE status = 'ISSUED'
+    GROUP BY neighborhood
+  reference_sql: |
+    SELECT neighborhood, SUM(COALESCE(fee_amount, 0)) AS total_fees
+    FROM permits
+    WHERE status = 'ISSUED'
+    GROUP BY neighborhood
+
+- id: control_inner_join
+  kind: control
+  description: Comma-style inner join
+  oracle_sql: |
+    SELECT p.permit_type, COUNT(*) AS passes
+    FROM permits p, inspections i
+    WHERE p.permit_id = i.permit_id
+      AND i.result = 'PASS'
+    GROUP BY p.permit_type
+  reference_sql: |
+    SELECT p.permit_type, COUNT(*) AS passes
+    FROM permits p
+    JOIN inspections i ON p.permit_id = i.permit_id
+    WHERE i.result = 'PASS'
+    GROUP BY p.permit_type
+
+- id: control_fee_bands
+  kind: control
+  description: Searched CASE bucketing
+  oracle_sql: |
+    SELECT CASE WHEN fee_amount < 500 THEN 'LOW'
+                WHEN fee_amount < 2000 THEN 'MID'
+                ELSE 'HIGH' END AS band,
+           COUNT(*) AS n
+    FROM permits
+    GROUP BY CASE WHEN fee_amount < 500 THEN 'LOW'
+                  WHEN fee_amount < 2000 THEN 'MID'
+                  ELSE 'HIGH' END
+  reference_sql: |
+    SELECT CASE WHEN fee_amount < 500 THEN 'LOW'
+                WHEN fee_amount < 2000 THEN 'MID'
+                ELSE 'HIGH' END AS band,
+           COUNT(*) AS n
+    FROM permits
+    GROUP BY 1
+
+- id: trap_concat_null
+  kind: trap
+  description: Oracle || ignores NULL; Trino || returns NULL if any operand is NULL
+  trap_keywords: ["null", "concat", "||", "coalesce"]
+  oracle_sql: |
+    SELECT contact_id,
+           first_name || ' ' || middle_name || ' ' || last_name AS full_name
+    FROM contacts
+    WHERE contact_type = 'APPLICANT'
+  reference_sql: |
+    SELECT contact_id,
+           first_name || ' ' || COALESCE(middle_name, '') || ' ' || last_name AS full_name
+    FROM contacts
+    WHERE contact_type = 'APPLICANT'
+  buggy_sql: |
+    SELECT contact_id,
+           first_name || ' ' || middle_name || ' ' || last_name AS full_name
+    FROM contacts
+    WHERE contact_type = 'APPLICANT'
+
+- id: trap_integer_division
+  kind: trap
+  description: Oracle NUMBER division is exact; Trino BIGINT / BIGINT truncates
+  trap_keywords: ["integer division", "cast", "double", "decimal", "truncat"]
+  oracle_sql: |
+    SELECT inspector_id,
+           SUM(CASE WHEN result = 'PASS' THEN 1 ELSE 0 END) / COUNT(*) AS pass_rate
+    FROM inspections
+    WHERE inspector_id IS NOT NULL
+    GROUP BY inspector_id
+  reference_sql: |
+    SELECT inspector_id,
+           CAST(SUM(CASE WHEN result = 'PASS' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS pass_rate
+    FROM inspections
+    WHERE inspector_id IS NOT NULL
+    GROUP BY inspector_id
+  buggy_sql: |
+    SELECT inspector_id,
+           SUM(CASE WHEN result = 'PASS' THEN 1 ELSE 0 END) / COUNT(*) AS pass_rate
+    FROM inspections
+    WHERE inspector_id IS NOT NULL
+    GROUP BY inspector_id
+
+- id: trap_decode_null
+  kind: trap
+  description: DECODE matches NULL to NULL; simple CASE x WHEN NULL never matches
+  trap_keywords: ["decode", "null", "is null"]
+  oracle_sql: |
+    SELECT DECODE(inspector_id, NULL, 'UNASSIGNED', 'ASSIGNED') AS assignment,
+           COUNT(*) AS n
+    FROM inspections
+    GROUP BY DECODE(inspector_id, NULL, 'UNASSIGNED', 'ASSIGNED')
+  reference_sql: |
+    SELECT CASE WHEN inspector_id IS NULL THEN 'UNASSIGNED' ELSE 'ASSIGNED' END AS assignment,
+           COUNT(*) AS n
+    FROM inspections
+    GROUP BY 1
+  buggy_sql: |
+    SELECT CASE inspector_id WHEN NULL THEN 'UNASSIGNED' ELSE 'ASSIGNED' END AS assignment,
+           COUNT(*) AS n
+    FROM inspections
+    GROUP BY 1
+
+- id: trap_outer_join_filter
+  kind: trap
+  description: (+) on the filter column belongs in ON; moving it to WHERE makes an inner join
+  trap_keywords: ["(+)", "outer join", "on clause", "where clause", "inner join"]
+  oracle_sql: |
+    SELECT p.permit_id, COUNT(i.inspection_id) AS failed_inspections
+    FROM permits p, inspections i
+    WHERE p.permit_id = i.permit_id(+)
+      AND i.result(+) = 'FAIL'
+      AND p.permit_type = 'SIDE_SEWER'
+    GROUP BY p.permit_id
+  reference_sql: |
+    SELECT p.permit_id, COUNT(i.inspection_id) AS failed_inspections
+    FROM permits p
+    LEFT JOIN inspections i
+      ON p.permit_id = i.permit_id AND i.result = 'FAIL'
+    WHERE p.permit_type = 'SIDE_SEWER'
+    GROUP BY p.permit_id
+  buggy_sql: |
+    SELECT p.permit_id, COUNT(i.inspection_id) AS failed_inspections
+    FROM permits p
+    LEFT JOIN inspections i ON p.permit_id = i.permit_id
+    WHERE i.result = 'FAIL'
+      AND p.permit_type = 'SIDE_SEWER'
+    GROUP BY p.permit_id
+
+- id: trap_trunc_date_range
+  kind: trap
+  description: Dropping TRUNC loses rows after midnight on the end date
+  trap_keywords: ["trunc", "time", "midnight", "end date", "cast(", "as date"]
+  oracle_sql: |
+    SELECT permit_type, COUNT(*) AS n
+    FROM permits
+    WHERE TRUNC(applied_date) BETWEEN DATE '2026-01-01' AND DATE '2026-01-31'
+    GROUP BY permit_type
+  reference_sql: |
+    SELECT permit_type, COUNT(*) AS n
+    FROM permits
+    WHERE CAST(applied_date AS DATE) BETWEEN DATE '2026-01-01' AND DATE '2026-01-31'
+    GROUP BY permit_type
+  buggy_sql: |
+    SELECT permit_type, COUNT(*) AS n
+    FROM permits
+    WHERE applied_date BETWEEN DATE '2026-01-01' AND DATE '2026-01-31'
+    GROUP BY permit_type
+
+- id: trap_date_subtraction
+  kind: trap
+  description: Oracle DATE - DATE gives fractional days; date_diff('day') truncates
+  trap_keywords: ["fraction", "date_diff", "partial day", "truncat", "second"]
+  oracle_sql: |
+    SELECT permit_type, AVG(issued_date - applied_date) AS avg_days_to_issue
+    FROM permits
+    WHERE issued_date IS NOT NULL
+    GROUP BY permit_type
+  reference_sql: |
+    SELECT permit_type,
+           AVG(CAST(date_diff('second', applied_date, issued_date) AS DOUBLE) / 86400) AS avg_days_to_issue
+    FROM permits
+    WHERE issued_date IS NOT NULL
+    GROUP BY permit_type
+  buggy_sql: |
+    SELECT permit_type, AVG(date_diff('day', applied_date, issued_date)) AS avg_days_to_issue
+    FROM permits
+    WHERE issued_date IS NOT NULL
+    GROUP BY permit_type
+
+- id: trap_implicit_numeric
+  kind: trap
+  description: Oracle converts the VARCHAR column to NUMBER, so '001001' = 1001
+  trap_keywords: ["implicit", "leading zero", "to_number", "cast", "numeric"]
+  oracle_sql: |
+    SELECT permit_id, legacy_ref
+    FROM permits
+    WHERE legacy_ref IN (1001, 1002, 1003)
+  reference_sql: |
+    SELECT permit_id, legacy_ref
+    FROM permits
+    WHERE TRY_CAST(legacy_ref AS INTEGER) IN (1001, 1002, 1003)
+  buggy_sql: |
+    SELECT permit_id, legacy_ref
+    FROM permits
+    WHERE legacy_ref IN ('1001', '1002', '1003')
+
+- id: trap_add_months_eom
+  kind: trap
+  description: ADD_MONTHS on a month-end returns the next month-end; date_add does not
+  trap_keywords: ["add_months", "last day", "month-end", "month end", "last_day_of_month"]
+  oracle_sql: |
+    SELECT permit_id, ADD_MONTHS(TRUNC(issued_date), 1) AS renewal_due
+    FROM permits
+    WHERE issued_date IS NOT NULL
+      AND TRUNC(issued_date) = LAST_DAY(TRUNC(issued_date))
+  reference_sql: |
+    SELECT permit_id,
+           last_day_of_month(date_add('month', 1, CAST(issued_date AS DATE))) AS renewal_due
+    FROM permits
+    WHERE issued_date IS NOT NULL
+      AND CAST(issued_date AS DATE) = last_day_of_month(issued_date)
+  buggy_sql: |
+    SELECT permit_id, date_add('month', 1, CAST(issued_date AS DATE)) AS renewal_due
+    FROM permits
+    WHERE issued_date IS NOT NULL
+      AND CAST(issued_date AS DATE) = last_day_of_month(issued_date)
+
+- id: trap_to_char_mon
+  kind: trap
+  description: TO_CHAR 'MON' is uppercase (JAN); Trino %b is title case (Jan)
+  trap_keywords: ["upper", "case", "uppercase", "mon"]
+  oracle_sql: |
+    SELECT TO_CHAR(applied_date, 'MON-YYYY') AS month_label, COUNT(*) AS n
+    FROM permits
+    GROUP BY TO_CHAR(applied_date, 'MON-YYYY')
+  reference_sql: |
+    SELECT upper(date_format(applied_date, '%b-%Y')) AS month_label, COUNT(*) AS n
+    FROM permits
+    GROUP BY 1
+  buggy_sql: |
+    SELECT date_format(applied_date, '%b-%Y') AS month_label, COUNT(*) AS n
+    FROM permits
+    GROUP BY 1
+
+- id: trap_null_ordering
+  kind: trap
+  ordered: true
+  description: Oracle sorts NULLs first on DESC; Trino sorts them last
+  trap_keywords: ["nulls first", "null ordering", "nulls last", "null sort"]
+  oracle_sql: |
+    SELECT permit_id, issued_date
+    FROM (SELECT permit_id, issued_date
+          FROM permits
+          ORDER BY issued_date DESC, permit_id)
+    WHERE ROWNUM <= 5
+  reference_sql: |
+    SELECT permit_id, issued_date
+    FROM permits
+    ORDER BY issued_date DESC NULLS FIRST, permit_id
+    LIMIT 5
+  buggy_sql: |
+    SELECT permit_id, issued_date
+    FROM permits
+    ORDER BY issued_date DESC, permit_id
+    LIMIT 5
+
+- id: trap_substr_zero
+  kind: trap
+  description: Oracle SUBSTR(s, 0, n) treats 0 as 1; Trino substr(s, 0, n) returns ''
+  trap_keywords: ["substr", "position 0", "start position", "1-based", "index"]
+  oracle_sql: |
+    SELECT SUBSTR(parcel_no, 0, 4) AS parcel_prefix, COUNT(*) AS n
+    FROM permits
+    GROUP BY SUBSTR(parcel_no, 0, 4)
+  reference_sql: |
+    SELECT substr(parcel_no, 1, 4) AS parcel_prefix, COUNT(*) AS n
+    FROM permits
+    GROUP BY 1
+  buggy_sql: |
+    SELECT substr(parcel_no, 0, 4) AS parcel_prefix, COUNT(*) AS n
+    FROM permits
+    GROUP BY 1

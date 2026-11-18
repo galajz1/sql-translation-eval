@@ -1,0 +1,4 @@
+oracledb
+trino
+anthropic
+pyyaml

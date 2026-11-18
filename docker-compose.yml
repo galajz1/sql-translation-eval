@@ -1,0 +1,22 @@
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: oraclepw
+      APP_USER: permits
+      APP_USER_PASSWORD: permits
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  trino:
+    # Amazon Athena engine v3 is based on Trino
+    image: trinodb/trino:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./docker/trino/memory.properties:/etc/trino/catalog/memory.properties:ro

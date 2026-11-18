@@ -1,0 +1,65 @@
+# Knowledge probes: one yes/no fact question per case, asked in isolation.
+# For traps, the answer is the fact the model needs in order to translate
+# correctly. Every trap's answer is confirmed empirically by validate_cases.py
+# (the buggy SQL that assumes the opposite returns different results).
+# Controls get "yes" probes so a model can't score well by always saying "no".
+
+control_status_counts:
+  question: "Ignoring row order, and assuming the table contains no empty strings, does `SELECT permit_type, status, COUNT(*) FROM permits GROUP BY permit_type, status` return the same set of rows in Oracle and in Trino (Athena engine v3) on identical data?"
+  answer: "yes"
+
+control_fees_by_neighborhood:
+  question: "For a numeric column x, does Oracle `NVL(x, 0)` return the same value as Trino `COALESCE(x, 0)` for every row, including rows where x is NULL?"
+  answer: "yes"
+
+control_inner_join:
+  question: "Is Oracle `FROM a, b WHERE a.id = b.id` equivalent to ANSI `FROM a JOIN b ON a.id = b.id` in Trino?"
+  answer: "yes"
+
+control_fee_bands:
+  question: "Does `CASE WHEN fee < 500 THEN 'LOW' WHEN fee < 2000 THEN 'MID' ELSE 'HIGH' END` return the same value in Oracle and in Trino for every non-NULL fee?"
+  answer: "yes"
+
+trap_concat_null:
+  question: "Does the expression `'abc' || NULL` return the same value in Oracle and in Trino (Athena engine v3)?"
+  answer: "no"
+
+trap_integer_division:
+  question: "Where both operands are integer counts with SUM = 3 and COUNT(*) = 4, does `SUM(...) / COUNT(*)` return the same value in Oracle and in Trino?"
+  answer: "no"
+
+trap_decode_null:
+  question: "When x is NULL, does Oracle `DECODE(x, NULL, 'A', 'B')` return the same value as Trino `CASE x WHEN NULL THEN 'A' ELSE 'B' END`?"
+  answer: "no"
+
+trap_outer_join_filter:
+  question: "Is Oracle `FROM p, i WHERE p.id = i.id(+) AND i.result(+) = 'FAIL'` equivalent to ANSI `FROM p LEFT JOIN i ON p.id = i.id WHERE i.result = 'FAIL'`?"
+  answer: "no"
+
+trap_trunc_date_range:
+  question: "In Trino, for a TIMESTAMP column ts, does `ts BETWEEN DATE '2026-01-01' AND DATE '2026-01-31'` include a row where ts = TIMESTAMP '2026-01-31 13:00:00'?"
+  answer: "no"
+
+trap_date_subtraction:
+  question: "If two Oracle DATE values are 1 day and 12 hours apart, does Oracle `later - earlier` return the same number as Trino `date_diff('day', earlier, later)`?"
+  answer: "no"
+
+trap_implicit_numeric:
+  question: "In Oracle, for a VARCHAR2 column ref, does `WHERE ref IN (1001)` match a row where ref = '001001'?"
+  answer: "yes"
+
+trap_add_months_eom:
+  question: "Does Oracle `ADD_MONTHS(DATE '2026-02-28', 1)` return the same date as Trino `date_add('month', 1, DATE '2026-02-28')`?"
+  answer: "no"
+
+trap_to_char_mon:
+  question: "With default English settings, does Oracle `TO_CHAR(d, 'MON')` produce exactly the same text (including letter case) as Trino `date_format(d, '%b')`?"
+  answer: "no"
+
+trap_null_ordering:
+  question: "With `ORDER BY col DESC` and no NULLS FIRST/NULLS LAST clause, do Oracle and Trino put NULL values in the same position?"
+  answer: "no"
+
+trap_substr_zero:
+  question: "Does `SUBSTR('0420123456', 0, 4)` return the same value in Oracle and in Trino?"
+  answer: "no"

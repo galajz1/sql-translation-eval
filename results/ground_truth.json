@@ -1,0 +1,2517 @@
+{
+ "control_status_counts": {
+  "ordered": false,
+  "rows": [
+   [
+    "HYDRANT",
+    "APPLIED",
+    17.0
+   ],
+   [
+    "HYDRANT",
+    "CLOSED",
+    16.0
+   ],
+   [
+    "HYDRANT",
+    "IN_REVIEW",
+    17.0
+   ],
+   [
+    "HYDRANT",
+    "ISSUED",
+    41.0
+   ],
+   [
+    "HYDRANT",
+    "WITHDRAWN",
+    11.0
+   ],
+   [
+    "SIDE_SEWER",
+    "APPLIED",
+    18.0
+   ],
+   [
+    "SIDE_SEWER",
+    "CLOSED",
+    24.0
+   ],
+   [
+    "SIDE_SEWER",
+    "IN_REVIEW",
+    16.0
+   ],
+   [
+    "SIDE_SEWER",
+    "ISSUED",
+    34.0
+   ],
+   [
+    "SIDE_SEWER",
+    "WITHDRAWN",
+    17.0
+   ],
+   [
+    "STREET_USE",
+    "APPLIED",
+    11.0
+   ],
+   [
+    "STREET_USE",
+    "CLOSED",
+    21.0
+   ],
+   [
+    "STREET_USE",
+    "IN_REVIEW",
+    26.0
+   ],
+   [
+    "STREET_USE",
+    "ISSUED",
+    28.0
+   ],
+   [
+    "STREET_USE",
+    "WITHDRAWN",
+    9.0
+   ],
+   [
+    "WAC",
+    "APPLIED",
+    11.0
+   ],
+   [
+    "WAC",
+    "CLOSED",
+    20.0
+   ],
+   [
+    "WAC",
+    "IN_REVIEW",
+    19.0
+   ],
+   [
+    "WAC",
+    "ISSUED",
+    34.0
+   ],
+   [
+    "WAC",
+    "WITHDRAWN",
+    10.0
+   ]
+  ]
+ },
+ "control_fees_by_neighborhood": {
+  "ordered": false,
+  "rows": [
+   [
+    "Ballard",
+    61658.65
+   ],
+   [
+    "Beacon Hill",
+    56034.17
+   ],
+   [
+    "Capitol Hill",
+    45392.39
+   ],
+   [
+    "Fremont",
+    29079.54
+   ],
+   [
+    "Georgetown",
+    32466.64
+   ],
+   [
+    "Rainier Valley",
+    37683.42
+   ],
+   [
+    "University District",
+    43927.58
+   ],
+   [
+    "West Seattle",
+    49096.75
+   ]
+  ]
+ },
+ "control_inner_join": {
+  "ordered": false,
+  "rows": [
+   [
+    "HYDRANT",
+    129.0
+   ],
+   [
+    "SIDE_SEWER",
+    147.0
+   ],
+   [
+    "STREET_USE",
+    106.0
+   ],
+   [
+    "WAC",
+    124.0
+   ]
+  ]
+ },
+ "control_fee_bands": {
+  "ordered": false,
+  "rows": [
+   [
+    "HIGH",
+    243.0
+   ],
+   [
+    "LOW",
+    35.0
+   ],
+   [
+    "MID",
+    122.0
+   ]
+  ]
+ },
+ "trap_concat_null": {
+  "ordered": false,
+  "rows": [
+   [
+    1.0,
+    "Gus Ann Brooks"
+   ],
+   [
+    100.0,
+    "Ivan Ann Alvarez"
+   ],
+   [
+    102.0,
+    "Chen Marie Brooks"
+   ],
+   [
+    104.0,
+    "Kofi  Lopez"
+   ],
+   [
+    105.0,
+    "Eli  Diaz"
+   ],
+   [
+    107.0,
+    "Ana Kai Diaz"
+   ],
+   [
+    108.0,
+    "Quinn  Kim"
+   ],
+   [
+    11.0,
+    "Quinn Marie Evans"
+   ],
+   [
+    110.0,
+    "Kofi Marie Lopez"
+   ],
+   [
+    112.0,
+    "Quinn  Jensen"
+   ],
+   [
+    113.0,
+    "Ivan  Kim"
+   ],
+   [
+    115.0,
+    "Fatima James Cho"
+   ],
+   [
+    116.0,
+    "Jo  Kim"
+   ],
+   [
+    117.0,
+    "Priya  Okafor"
+   ],
+   [
+    119.0,
+    "Rosa Ann Okafor"
+   ],
+   [
+    120.0,
+    "Chen Ray Patel"
+   ],
+   [
+    122.0,
+    "Jo Ray Brooks"
+   ],
+   [
+    123.0,
+    "Chen Ann Alvarez"
+   ],
+   [
+    125.0,
+    "Hana Ray Ibrahim"
+   ],
+   [
+    127.0,
+    "Rosa Ray Alvarez"
+   ],
+   [
+    128.0,
+    "Sam  Fujita"
+   ],
+   [
+    129.0,
+    "Lena Kai Fujita"
+   ],
+   [
+    13.0,
+    "Kofi  Jensen"
+   ],
+   [
+    130.0,
+    "Mateo Ray Patel"
+   ],
+   [
+    132.0,
+    "Sam  Garcia"
+   ],
+   [
+    133.0,
+    "Chen Ray Alvarez"
+   ],
+   [
+    134.0,
+    "Ivan Ray Garcia"
+   ],
+   [
+    135.0,
+    "Kofi Lee Ibrahim"
+   ],
+   [
+    136.0,
+    "Gus Ann Mendez"
+   ],
+   [
+    138.0,
+    "Ana Kai Patel"
+   ],
+   [
+    139.0,
+    "Ana  Mendez"
+   ],
+   [
+    140.0,
+    "Jo  Mendez"
+   ],
+   [
+    141.0,
+    "Gus  Okafor"
+   ],
+   [
+    143.0,
+    "Gus Kai Nguyen"
+   ],
+   [
+    145.0,
+    "Eli James Nguyen"
+   ],
+   [
+    147.0,
+    "Nia  Huang"
+   ],
+   [
+    148.0,
+    "Eli Marie Patel"
+   ],
+   [
+    15.0,
+    "Ana  Alvarez"
+   ],
+   [
+    150.0,
+    "Gus  Mendez"
+   ],
+   [
+    151.0,
+    "Eli  Garcia"
+   ],
+   [
+    152.0,
+    "Omar James Okafor"
+   ],
+   [
+    154.0,
+    "Dana Lee Okafor"
+   ],
+   [
+    155.0,
+    "Sam  Alvarez"
+   ],
+   [
+    156.0,
+    "Ivan  Garcia"
+   ],
+   [
+    158.0,
+    "Hana James Kim"
+   ],
+   [
+    159.0,
+    "Omar  Patel"
+   ],
+   [
+    16.0,
+    "Rosa  Patel"
+   ],
+   [
+    161.0,
+    "Gus Kai Alvarez"
+   ],
+   [
+    163.0,
+    "Hana James Kim"
+   ],
+   [
+    164.0,
+    "Jo  Fujita"
+   ],
+   [
+    165.0,
+    "Kofi James Evans"
+   ],
+   [
+    167.0,
+    "Dana Ann Alvarez"
+   ],
+   [
+    168.0,
+    "Rosa  Kim"
+   ],
+   [
+    17.0,
+    "Lena Ann Mendez"
+   ],
+   [
+    170.0,
+    "Ben  Evans"
+   ],
+   [
+    171.0,
+    "Mateo Ray Garcia"
+   ],
+   [
+    172.0,
+    "Jo Ann Lopez"
+   ],
+   [
+    174.0,
+    "Mateo Kai Cho"
+   ],
+   [
+    175.0,
+    "Omar Lee Huang"
+   ],
+   [
+    177.0,
+    "Sam Ann Brooks"
+   ],
+   [
+    179.0,
+    "Tomas  Fujita"
+   ],
+   [
+    180.0,
+    "Chen  Diaz"
+   ],
+   [
+    182.0,
+    "Eli Marie Huang"
+   ],
+   [
+    184.0,
+    "Quinn James Brooks"
+   ],
+   [
+    185.0,
+    "Dana  Garcia"
+   ],
+   [
+    186.0,
+    "Ivan Ray Lopez"
+   ],
+   [
+    187.0,
+    "Sam  Alvarez"
+   ],
+   [
+    189.0,
+    "Eli  Patel"
+   ],
+   [
+    19.0,
+    "Chen Marie Ibrahim"
+   ],
+   [
+    191.0,
+    "Mateo  Diaz"
+   ],
+   [
+    193.0,
+    "Ben Lee Cho"
+   ],
+   [
+    195.0,
+    "Eli  Jensen"
+   ],
+   [
+    197.0,
+    "Nia  Lopez"
+   ],
+   [
+    199.0,
+    "Ana Kai Kim"
+   ],
+   [
+    2.0,
+    "Lena  Garcia"
+   ],
+   [
+    201.0,
+    "Jo  Lopez"
+   ],
+   [
+    203.0,
+    "Chen  Diaz"
+   ],
+   [
+    204.0,
+    "Mateo  Ibrahim"
+   ],
+   [
+    206.0,
+    "Ivan Lee Huang"
+   ],
+   [
+    207.0,
+    "Chen  Mendez"
+   ],
+   [
+    208.0,
+    "Gus Marie Evans"
+   ],
+   [
+    209.0,
+    "Dana  Huang"
+   ],
+   [
+    21.0,
+    "Hana  Cho"
+   ],
+   [
+    210.0,
+    "Fatima  Okafor"
+   ],
+   [
+    212.0,
+    "Quinn  Evans"
+   ],
+   [
+    214.0,
+    "Omar Marie Garcia"
+   ],
+   [
+    215.0,
+    "Ivan  Jensen"
+   ],
+   [
+    216.0,
+    "Priya  Evans"
+   ],
+   [
+    218.0,
+    "Hana  Patel"
+   ],
+   [
+    220.0,
+    "Rosa  Brooks"
+   ],
+   [
+    221.0,
+    "Dana Marie Kim"
+   ],
+   [
+    223.0,
+    "Hana James Fujita"
+   ],
+   [
+    225.0,
+    "Sam  Garcia"
+   ],
+   [
+    226.0,
+    "Chen  Huang"
+   ],
+   [
+    228.0,
+    "Sam Lee Evans"
+   ],
+   [
+    229.0,
+    "Rosa James Mendez"
+   ],
+   [
+    23.0,
+    "Quinn  Brooks"
+   ],
+   [
+    230.0,
+    "Tomas Ann Nguyen"
+   ],
+   [
+    232.0,
+    "Quinn  Diaz"
+   ],
+   [
+    233.0,
+    "Omar  Okafor"
+   ],
+   [
+    235.0,
+    "Ana  Fujita"
+   ],
+   [
+    237.0,
+    "Ana Lee Garcia"
+   ],
+   [
+    239.0,
+    "Priya Ann Jensen"
+   ],
+   [
+    240.0,
+    "Omar  Huang"
+   ],
+   [
+    242.0,
+    "Quinn  Brooks"
+   ],
+   [
+    244.0,
+    "Ben Lee Diaz"
+   ],
+   [
+    245.0,
+    "Kofi Marie Evans"
+   ],
+   [
+    246.0,
+    "Priya Marie Kim"
+   ],
+   [
+    248.0,
+    "Nia  Nguyen"
+   ],
+   [
+    25.0,
+    "Mateo Marie Evans"
+   ],
+   [
+    250.0,
+    "Mateo Ann Fujita"
+   ],
+   [
+    252.0,
+    "Omar  Garcia"
+   ],
+   [
+    253.0,
+    "Jo  Nguyen"
+   ],
+   [
+    255.0,
+    "Sam Marie Alvarez"
+   ],
+   [
+    257.0,
+    "Quinn  Mendez"
+   ],
+   [
+    258.0,
+    "Lena Marie Jensen"
+   ],
+   [
+    260.0,
+    "Priya  Jensen"
+   ],
+   [
+    262.0,
+    "Dana Ray Cho"
+   ],
+   [
+    263.0,
+    "Rosa Lee Kim"
+   ],
+   [
+    265.0,
+    "Jo Lee Evans"
+   ],
+   [
+    266.0,
+    "Quinn  Mendez"
+   ],
+   [
+    268.0,
+    "Fatima  Huang"
+   ],
+   [
+    269.0,
+    "Tomas  Jensen"
+   ],
+   [
+    27.0,
+    "Eli  Alvarez"
+   ],
+   [
+    270.0,
+    "Rosa Ann Cho"
+   ],
+   [
+    272.0,
+    "Kofi Ray Kim"
+   ],
+   [
+    274.0,
+    "Lena Marie Garcia"
+   ],
+   [
+    276.0,
+    "Sam Marie Patel"
+   ],
+   [
+    277.0,
+    "Omar  Alvarez"
+   ],
+   [
+    278.0,
+    "Quinn  Brooks"
+   ],
+   [
+    280.0,
+    "Kofi Ann Ibrahim"
+   ],
+   [
+    281.0,
+    "Jo Ray Mendez"
+   ],
+   [
+    282.0,
+    "Tomas Marie Okafor"
+   ],
+   [
+    284.0,
+    "Gus  Garcia"
+   ],
+   [
+    286.0,
+    "Ben Lee Patel"
+   ],
+   [
+    287.0,
+    "Kofi Marie Mendez"
+   ],
+   [
+    289.0,
+    "Dana  Kim"
+   ],
+   [
+    29.0,
+    "Rosa Lee Nguyen"
+   ],
+   [
+    290.0,
+    "Chen Marie Diaz"
+   ],
+   [
+    291.0,
+    "Priya Ann Cho"
+   ],
+   [
+    292.0,
+    "Jo  Nguyen"
+   ],
+   [
+    294.0,
+    "Lena Ray Cho"
+   ],
+   [
+    295.0,
+    "Chen Marie Lopez"
+   ],
+   [
+    297.0,
+    "Jo  Lopez"
+   ],
+   [
+    298.0,
+    "Sam Kai Evans"
+   ],
+   [
+    3.0,
+    "Tomas Ray Jensen"
+   ],
+   [
+    300.0,
+    "Priya Ann Diaz"
+   ],
+   [
+    302.0,
+    "Mateo James Jensen"
+   ],
+   [
+    303.0,
+    "Dana  Evans"
+   ],
+   [
+    305.0,
+    "Sam  Brooks"
+   ],
+   [
+    307.0,
+    "Nia Kai Okafor"
+   ],
+   [
+    308.0,
+    "Nia  Diaz"
+   ],
+   [
+    309.0,
+    "Hana James Okafor"
+   ],
+   [
+    31.0,
+    "Sam Ray Ibrahim"
+   ],
+   [
+    310.0,
+    "Rosa Lee Garcia"
+   ],
+   [
+    311.0,
+    "Chen  Huang"
+   ],
+   [
+    312.0,
+    "Hana  Cho"
+   ],
+   [
+    314.0,
+    "Ana Lee Huang"
+   ],
+   [
+    315.0,
+    "Ben  Nguyen"
+   ],
+   [
+    317.0,
+    "Hana  Mendez"
+   ],
+   [
+    318.0,
+    "Chen Marie Garcia"
+   ],
+   [
+    319.0,
+    "Gus  Ibrahim"
+   ],
+   [
+    320.0,
+    "Nia  Nguyen"
+   ],
+   [
+    322.0,
+    "Fatima James Ibrahim"
+   ],
+   [
+    323.0,
+    "Nia  Mendez"
+   ],
+   [
+    325.0,
+    "Lena  Alvarez"
+   ],
+   [
+    327.0,
+    "Gus  Mendez"
+   ],
+   [
+    329.0,
+    "Tomas  Diaz"
+   ],
+   [
+    33.0,
+    "Quinn  Mendez"
+   ],
+   [
+    331.0,
+    "Ana  Mendez"
+   ],
+   [
+    333.0,
+    "Gus  Alvarez"
+   ],
+   [
+    334.0,
+    "Tomas Ann Cho"
+   ],
+   [
+    336.0,
+    "Kofi  Mendez"
+   ],
+   [
+    338.0,
+    "Sam  Garcia"
+   ],
+   [
+    340.0,
+    "Jo Ann Huang"
+   ],
+   [
+    342.0,
+    "Rosa Kai Mendez"
+   ],
+   [
+    343.0,
+    "Jo  Okafor"
+   ],
+   [
+    344.0,
+    "Sam  Diaz"
+   ],
+   [
+    346.0,
+    "Dana  Kim"
+   ],
+   [
+    347.0,
+    "Priya  Jensen"
+   ],
+   [
+    349.0,
+    "Sam Kai Patel"
+   ],
+   [
+    35.0,
+    "Lena  Cho"
+   ],
+   [
+    350.0,
+    "Ana  Mendez"
+   ],
+   [
+    352.0,
+    "Quinn Ray Jensen"
+   ],
+   [
+    353.0,
+    "Gus  Evans"
+   ],
+   [
+    354.0,
+    "Sam Marie Fujita"
+   ],
+   [
+    355.0,
+    "Hana  Mendez"
+   ],
+   [
+    357.0,
+    "Eli Ray Evans"
+   ],
+   [
+    358.0,
+    "Chen Marie Cho"
+   ],
+   [
+    359.0,
+    "Rosa  Patel"
+   ],
+   [
+    360.0,
+    "Lena  Evans"
+   ],
+   [
+    362.0,
+    "Fatima Lee Mendez"
+   ],
+   [
+    364.0,
+    "Rosa Ann Ibrahim"
+   ],
+   [
+    365.0,
+    "Jo Ann Brooks"
+   ],
+   [
+    367.0,
+    "Ben Ray Kim"
+   ],
+   [
+    368.0,
+    "Fatima Lee Huang"
+   ],
+   [
+    369.0,
+    "Ben  Ibrahim"
+   ],
+   [
+    37.0,
+    "Ben Lee Lopez"
+   ],
+   [
+    371.0,
+    "Ivan James Diaz"
+   ],
+   [
+    373.0,
+    "Kofi  Jensen"
+   ],
+   [
+    374.0,
+    "Gus  Nguyen"
+   ],
+   [
+    376.0,
+    "Sam  Brooks"
+   ],
+   [
+    378.0,
+    "Quinn  Okafor"
+   ],
+   [
+    379.0,
+    "Ivan Lee Diaz"
+   ],
+   [
+    38.0,
+    "Quinn Lee Jensen"
+   ],
+   [
+    381.0,
+    "Gus James Diaz"
+   ],
+   [
+    382.0,
+    "Mateo  Ibrahim"
+   ],
+   [
+    383.0,
+    "Priya Ann Cho"
+   ],
+   [
+    385.0,
+    "Chen Kai Nguyen"
+   ],
+   [
+    387.0,
+    "Ben Lee Evans"
+   ],
+   [
+    388.0,
+    "Dana  Kim"
+   ],
+   [
+    389.0,
+    "Mateo Lee Diaz"
+   ],
+   [
+    39.0,
+    "Hana Kai Jensen"
+   ],
+   [
+    390.0,
+    "Jo  Lopez"
+   ],
+   [
+    391.0,
+    "Mateo  Okafor"
+   ],
+   [
+    393.0,
+    "Mateo Ann Lopez"
+   ],
+   [
+    395.0,
+    "Ana  Lopez"
+   ],
+   [
+    396.0,
+    "Hana  Brooks"
+   ],
+   [
+    398.0,
+    "Kofi  Okafor"
+   ],
+   [
+    4.0,
+    "Rosa Marie Mendez"
+   ],
+   [
+    40.0,
+    "Lena  Garcia"
+   ],
+   [
+    400.0,
+    "Eli Lee Garcia"
+   ],
+   [
+    401.0,
+    "Tomas James Kim"
+   ],
+   [
+    403.0,
+    "Chen  Brooks"
+   ],
+   [
+    405.0,
+    "Quinn  Diaz"
+   ],
+   [
+    407.0,
+    "Mateo Ray Huang"
+   ],
+   [
+    409.0,
+    "Omar  Evans"
+   ],
+   [
+    410.0,
+    "Sam  Mendez"
+   ],
+   [
+    412.0,
+    "Mateo James Nguyen"
+   ],
+   [
+    413.0,
+    "Mateo  Brooks"
+   ],
+   [
+    414.0,
+    "Ana Kai Nguyen"
+   ],
+   [
+    416.0,
+    "Rosa Kai Garcia"
+   ],
+   [
+    417.0,
+    "Gus Marie Lopez"
+   ],
+   [
+    418.0,
+    "Omar James Nguyen"
+   ],
+   [
+    419.0,
+    "Quinn  Brooks"
+   ],
+   [
+    42.0,
+    "Rosa  Brooks"
+   ],
+   [
+    420.0,
+    "Lena  Huang"
+   ],
+   [
+    422.0,
+    "Sam  Mendez"
+   ],
+   [
+    423.0,
+    "Gus Ann Cho"
+   ],
+   [
+    424.0,
+    "Rosa  Cho"
+   ],
+   [
+    426.0,
+    "Ana Kai Nguyen"
+   ],
+   [
+    428.0,
+    "Sam James Brooks"
+   ],
+   [
+    429.0,
+    "Eli Kai Huang"
+   ],
+   [
+    431.0,
+    "Dana Marie Jensen"
+   ],
+   [
+    432.0,
+    "Chen Lee Okafor"
+   ],
+   [
+    433.0,
+    "Fatima Marie Kim"
+   ],
+   [
+    435.0,
+    "Gus  Okafor"
+   ],
+   [
+    436.0,
+    "Kofi Ann Garcia"
+   ],
+   [
+    438.0,
+    "Jo  Evans"
+   ],
+   [
+    439.0,
+    "Ana Ann Cho"
+   ],
+   [
+    44.0,
+    "Mateo Ray Ibrahim"
+   ],
+   [
+    441.0,
+    "Rosa  Alvarez"
+   ],
+   [
+    442.0,
+    "Jo Kai Cho"
+   ],
+   [
+    444.0,
+    "Nia  Okafor"
+   ],
+   [
+    445.0,
+    "Gus  Okafor"
+   ],
+   [
+    447.0,
+    "Quinn Lee Okafor"
+   ],
+   [
+    449.0,
+    "Gus James Mendez"
+   ],
+   [
+    451.0,
+    "Hana  Cho"
+   ],
+   [
+    452.0,
+    "Ivan Marie Patel"
+   ],
+   [
+    454.0,
+    "Priya Lee Diaz"
+   ],
+   [
+    455.0,
+    "Kofi Kai Patel"
+   ],
+   [
+    457.0,
+    "Nia Lee Lopez"
+   ],
+   [
+    458.0,
+    "Omar Lee Lopez"
+   ],
+   [
+    46.0,
+    "Jo  Ibrahim"
+   ],
+   [
+    460.0,
+    "Ana James Okafor"
+   ],
+   [
+    461.0,
+    "Lena  Jensen"
+   ],
+   [
+    463.0,
+    "Ben  Patel"
+   ],
+   [
+    465.0,
+    "Lena Ann Okafor"
+   ],
+   [
+    466.0,
+    "Quinn  Okafor"
+   ],
+   [
+    467.0,
+    "Jo  Alvarez"
+   ],
+   [
+    469.0,
+    "Ana Lee Okafor"
+   ],
+   [
+    47.0,
+    "Ivan  Patel"
+   ],
+   [
+    471.0,
+    "Nia Ann Evans"
+   ],
+   [
+    473.0,
+    "Lena Kai Garcia"
+   ],
+   [
+    474.0,
+    "Sam  Lopez"
+   ],
+   [
+    475.0,
+    "Omar Kai Mendez"
+   ],
+   [
+    477.0,
+    "Quinn Marie Patel"
+   ],
+   [
+    479.0,
+    "Fatima Ray Jensen"
+   ],
+   [
+    481.0,
+    "Ben Kai Evans"
+   ],
+   [
+    483.0,
+    "Priya Lee Evans"
+   ],
+   [
+    484.0,
+    "Nia Marie Patel"
+   ],
+   [
+    485.0,
+    "Rosa  Brooks"
+   ],
+   [
+    487.0,
+    "Priya  Diaz"
+   ],
+   [
+    488.0,
+    "Lena James Huang"
+   ],
+   [
+    49.0,
+    "Quinn  Patel"
+   ],
+   [
+    490.0,
+    "Eli  Brooks"
+   ],
+   [
+    492.0,
+    "Kofi  Nguyen"
+   ],
+   [
+    493.0,
+    "Ana  Ibrahim"
+   ],
+   [
+    495.0,
+    "Sam  Kim"
+   ],
+   [
+    497.0,
+    "Chen  Ibrahim"
+   ],
+   [
+    498.0,
+    "Tomas Kai Brooks"
+   ],
+   [
+    500.0,
+    "Lena  Brooks"
+   ],
+   [
+    501.0,
+    "Hana James Garcia"
+   ],
+   [
+    502.0,
+    "Fatima Marie Lopez"
+   ],
+   [
+    503.0,
+    "Quinn  Lopez"
+   ],
+   [
+    504.0,
+    "Sam  Jensen"
+   ],
+   [
+    506.0,
+    "Omar Marie Nguyen"
+   ],
+   [
+    507.0,
+    "Gus  Fujita"
+   ],
+   [
+    508.0,
+    "Ana  Fujita"
+   ],
+   [
+    509.0,
+    "Tomas  Diaz"
+   ],
+   [
+    51.0,
+    "Chen Lee Garcia"
+   ],
+   [
+    510.0,
+    "Priya  Evans"
+   ],
+   [
+    512.0,
+    "Mateo  Kim"
+   ],
+   [
+    514.0,
+    "Jo  Ibrahim"
+   ],
+   [
+    515.0,
+    "Rosa Lee Fujita"
+   ],
+   [
+    517.0,
+    "Chen  Huang"
+   ],
+   [
+    518.0,
+    "Quinn Ray Kim"
+   ],
+   [
+    52.0,
+    "Mateo Kai Jensen"
+   ],
+   [
+    520.0,
+    "Gus  Cho"
+   ],
+   [
+    522.0,
+    "Jo  Nguyen"
+   ],
+   [
+    524.0,
+    "Nia  Huang"
+   ],
+   [
+    526.0,
+    "Ana  Diaz"
+   ],
+   [
+    528.0,
+    "Gus Kai Diaz"
+   ],
+   [
+    53.0,
+    "Hana James Cho"
+   ],
+   [
+    530.0,
+    "Chen  Diaz"
+   ],
+   [
+    532.0,
+    "Ivan James Nguyen"
+   ],
+   [
+    533.0,
+    "Nia Lee Cho"
+   ],
+   [
+    534.0,
+    "Dana  Brooks"
+   ],
+   [
+    536.0,
+    "Priya Marie Alvarez"
+   ],
+   [
+    538.0,
+    "Gus Ann Ibrahim"
+   ],
+   [
+    539.0,
+    "Gus  Cho"
+   ],
+   [
+    541.0,
+    "Quinn  Kim"
+   ],
+   [
+    543.0,
+    "Lena  Okafor"
+   ],
+   [
+    545.0,
+    "Ivan  Alvarez"
+   ],
+   [
+    546.0,
+    "Omar Kai Patel"
+   ],
+   [
+    547.0,
+    "Tomas  Evans"
+   ],
+   [
+    549.0,
+    "Quinn  Evans"
+   ],
+   [
+    55.0,
+    "Fatima  Mendez"
+   ],
+   [
+    551.0,
+    "Ana  Garcia"
+   ],
+   [
+    552.0,
+    "Priya  Lopez"
+   ],
+   [
+    554.0,
+    "Nia  Lopez"
+   ],
+   [
+    555.0,
+    "Dana  Lopez"
+   ],
+   [
+    557.0,
+    "Omar  Nguyen"
+   ],
+   [
+    558.0,
+    "Hana James Diaz"
+   ],
+   [
+    559.0,
+    "Jo  Garcia"
+   ],
+   [
+    560.0,
+    "Fatima Marie Okafor"
+   ],
+   [
+    562.0,
+    "Eli  Mendez"
+   ],
+   [
+    564.0,
+    "Mateo James Fujita"
+   ],
+   [
+    566.0,
+    "Dana  Mendez"
+   ],
+   [
+    568.0,
+    "Chen Kai Evans"
+   ],
+   [
+    569.0,
+    "Fatima Lee Jensen"
+   ],
+   [
+    57.0,
+    "Nia  Jensen"
+   ],
+   [
+    570.0,
+    "Tomas  Huang"
+   ],
+   [
+    571.0,
+    "Lena Kai Brooks"
+   ],
+   [
+    573.0,
+    "Ivan  Cho"
+   ],
+   [
+    574.0,
+    "Jo Marie Ibrahim"
+   ],
+   [
+    575.0,
+    "Omar Marie Kim"
+   ],
+   [
+    577.0,
+    "Rosa Kai Lopez"
+   ],
+   [
+    578.0,
+    "Fatima  Mendez"
+   ],
+   [
+    580.0,
+    "Dana  Mendez"
+   ],
+   [
+    581.0,
+    "Gus Kai Fujita"
+   ],
+   [
+    582.0,
+    "Chen  Alvarez"
+   ],
+   [
+    584.0,
+    "Gus Kai Ibrahim"
+   ],
+   [
+    585.0,
+    "Jo James Alvarez"
+   ],
+   [
+    587.0,
+    "Quinn  Kim"
+   ],
+   [
+    588.0,
+    "Dana  Kim"
+   ],
+   [
+    59.0,
+    "Fatima  Garcia"
+   ],
+   [
+    590.0,
+    "Fatima Kai Huang"
+   ],
+   [
+    592.0,
+    "Ben Ray Garcia"
+   ],
+   [
+    593.0,
+    "Dana  Okafor"
+   ],
+   [
+    594.0,
+    "Rosa  Jensen"
+   ],
+   [
+    596.0,
+    "Tomas Ray Fujita"
+   ],
+   [
+    597.0,
+    "Ivan  Jensen"
+   ],
+   [
+    598.0,
+    "Kofi  Patel"
+   ],
+   [
+    6.0,
+    "Gus  Kim"
+   ],
+   [
+    60.0,
+    "Hana  Mendez"
+   ],
+   [
+    600.0,
+    "Jo Lee Alvarez"
+   ],
+   [
+    601.0,
+    "Gus Kai Ibrahim"
+   ],
+   [
+    603.0,
+    "Quinn  Cho"
+   ],
+   [
+    604.0,
+    "Hana  Kim"
+   ],
+   [
+    606.0,
+    "Mateo Kai Alvarez"
+   ],
+   [
+    607.0,
+    "Gus  Diaz"
+   ],
+   [
+    609.0,
+    "Mateo James Patel"
+   ],
+   [
+    61.0,
+    "Hana Marie Nguyen"
+   ],
+   [
+    62.0,
+    "Omar Ann Garcia"
+   ],
+   [
+    63.0,
+    "Omar  Jensen"
+   ],
+   [
+    65.0,
+    "Chen Kai Mendez"
+   ],
+   [
+    67.0,
+    "Eli  Fujita"
+   ],
+   [
+    69.0,
+    "Priya Kai Cho"
+   ],
+   [
+    7.0,
+    "Rosa  Cho"
+   ],
+   [
+    70.0,
+    "Hana Ray Mendez"
+   ],
+   [
+    72.0,
+    "Kofi  Kim"
+   ],
+   [
+    73.0,
+    "Omar  Okafor"
+   ],
+   [
+    75.0,
+    "Kofi  Alvarez"
+   ],
+   [
+    77.0,
+    "Jo  Brooks"
+   ],
+   [
+    78.0,
+    "Mateo Lee Evans"
+   ],
+   [
+    8.0,
+    "Sam  Brooks"
+   ],
+   [
+    80.0,
+    "Nia  Kim"
+   ],
+   [
+    82.0,
+    "Tomas  Okafor"
+   ],
+   [
+    83.0,
+    "Eli Kai Jensen"
+   ],
+   [
+    84.0,
+    "Rosa Ray Garcia"
+   ],
+   [
+    86.0,
+    "Ivan  Lopez"
+   ],
+   [
+    88.0,
+    "Mateo Kai Fujita"
+   ],
+   [
+    9.0,
+    "Jo Ann Cho"
+   ],
+   [
+    90.0,
+    "Quinn Marie Evans"
+   ],
+   [
+    92.0,
+    "Tomas  Patel"
+   ],
+   [
+    94.0,
+    "Nia  Mendez"
+   ],
+   [
+    95.0,
+    "Hana  Mendez"
+   ],
+   [
+    96.0,
+    "Gus James Okafor"
+   ],
+   [
+    98.0,
+    "Eli  Fujita"
+   ]
+  ]
+ },
+ "trap_integer_division": {
+  "ordered": false,
+  "rows": [
+   [
+    1.0,
+    0.574257
+   ],
+   [
+    2.0,
+    0.578512
+   ],
+   [
+    3.0,
+    0.539216
+   ],
+   [
+    4.0,
+    0.49505
+   ],
+   [
+    5.0,
+    0.495652
+   ],
+   [
+    6.0,
+    0.6
+   ],
+   [
+    7.0,
+    0.543689
+   ],
+   [
+    8.0,
+    0.5
+   ]
+  ]
+ },
+ "trap_decode_null": {
+  "ordered": false,
+  "rows": [
+   [
+    "ASSIGNED",
+    829.0
+   ],
+   [
+    "UNASSIGNED",
+    88.0
+   ]
+  ]
+ },
+ "trap_outer_join_filter": {
+  "ordered": false,
+  "rows": [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    104.0,
+    0.0
+   ],
+   [
+    106.0,
+    0.0
+   ],
+   [
+    108.0,
+    0.0
+   ],
+   [
+    11.0,
+    1.0
+   ],
+   [
+    110.0,
+    0.0
+   ],
+   [
+    114.0,
+    1.0
+   ],
+   [
+    115.0,
+    0.0
+   ],
+   [
+    121.0,
+    0.0
+   ],
+   [
+    127.0,
+    2.0
+   ],
+   [
+    128.0,
+    2.0
+   ],
+   [
+    13.0,
+    0.0
+   ],
+   [
+    136.0,
+    0.0
+   ],
+   [
+    137.0,
+    0.0
+   ],
+   [
+    145.0,
+    2.0
+   ],
+   [
+    149.0,
+    0.0
+   ],
+   [
+    15.0,
+    0.0
+   ],
+   [
+    152.0,
+    0.0
+   ],
+   [
+    156.0,
+    2.0
+   ],
+   [
+    159.0,
+    0.0
+   ],
+   [
+    16.0,
+    0.0
+   ],
+   [
+    162.0,
+    0.0
+   ],
+   [
+    166.0,
+    1.0
+   ],
+   [
+    174.0,
+    0.0
+   ],
+   [
+    177.0,
+    1.0
+   ],
+   [
+    178.0,
+    0.0
+   ],
+   [
+    188.0,
+    0.0
+   ],
+   [
+    19.0,
+    1.0
+   ],
+   [
+    194.0,
+    2.0
+   ],
+   [
+    197.0,
+    0.0
+   ],
+   [
+    200.0,
+    0.0
+   ],
+   [
+    201.0,
+    1.0
+   ],
+   [
+    204.0,
+    1.0
+   ],
+   [
+    207.0,
+    0.0
+   ],
+   [
+    208.0,
+    0.0
+   ],
+   [
+    213.0,
+    2.0
+   ],
+   [
+    220.0,
+    1.0
+   ],
+   [
+    222.0,
+    1.0
+   ],
+   [
+    224.0,
+    0.0
+   ],
+   [
+    226.0,
+    0.0
+   ],
+   [
+    228.0,
+    1.0
+   ],
+   [
+    229.0,
+    0.0
+   ],
+   [
+    23.0,
+    1.0
+   ],
+   [
+    235.0,
+    0.0
+   ],
+   [
+    241.0,
+    1.0
+   ],
+   [
+    243.0,
+    0.0
+   ],
+   [
+    247.0,
+    0.0
+   ],
+   [
+    248.0,
+    0.0
+   ],
+   [
+    250.0,
+    4.0
+   ],
+   [
+    252.0,
+    1.0
+   ],
+   [
+    253.0,
+    0.0
+   ],
+   [
+    255.0,
+    1.0
+   ],
+   [
+    264.0,
+    0.0
+   ],
+   [
+    265.0,
+    0.0
+   ],
+   [
+    266.0,
+    1.0
+   ],
+   [
+    269.0,
+    0.0
+   ],
+   [
+    273.0,
+    2.0
+   ],
+   [
+    284.0,
+    1.0
+   ],
+   [
+    285.0,
+    0.0
+   ],
+   [
+    288.0,
+    1.0
+   ],
+   [
+    289.0,
+    0.0
+   ],
+   [
+    293.0,
+    2.0
+   ],
+   [
+    296.0,
+    0.0
+   ],
+   [
+    298.0,
+    0.0
+   ],
+   [
+    301.0,
+    1.0
+   ],
+   [
+    306.0,
+    0.0
+   ],
+   [
+    309.0,
+    1.0
+   ],
+   [
+    312.0,
+    3.0
+   ],
+   [
+    315.0,
+    0.0
+   ],
+   [
+    316.0,
+    0.0
+   ],
+   [
+    32.0,
+    2.0
+   ],
+   [
+    321.0,
+    0.0
+   ],
+   [
+    323.0,
+    1.0
+   ],
+   [
+    329.0,
+    0.0
+   ],
+   [
+    33.0,
+    1.0
+   ],
+   [
+    330.0,
+    0.0
+   ],
+   [
+    333.0,
+    1.0
+   ],
+   [
+    344.0,
+    3.0
+   ],
+   [
+    347.0,
+    1.0
+   ],
+   [
+    35.0,
+    1.0
+   ],
+   [
+    354.0,
+    0.0
+   ],
+   [
+    357.0,
+    0.0
+   ],
+   [
+    36.0,
+    0.0
+   ],
+   [
+    362.0,
+    0.0
+   ],
+   [
+    363.0,
+    2.0
+   ],
+   [
+    364.0,
+    0.0
+   ],
+   [
+    366.0,
+    0.0
+   ],
+   [
+    372.0,
+    0.0
+   ],
+   [
+    373.0,
+    1.0
+   ],
+   [
+    38.0,
+    0.0
+   ],
+   [
+    388.0,
+    0.0
+   ],
+   [
+    389.0,
+    1.0
+   ],
+   [
+    391.0,
+    1.0
+   ],
+   [
+    394.0,
+    0.0
+   ],
+   [
+    398.0,
+    1.0
+   ],
+   [
+    51.0,
+    0.0
+   ],
+   [
+    53.0,
+    0.0
+   ],
+   [
+    60.0,
+    1.0
+   ],
+   [
+    65.0,
+    0.0
+   ],
+   [
+    68.0,
+    0.0
+   ],
+   [
+    7.0,
+    0.0
+   ],
+   [
+    73.0,
+    0.0
+   ],
+   [
+    77.0,
+    2.0
+   ],
+   [
+    78.0,
+    0.0
+   ],
+   [
+    80.0,
+    2.0
+   ],
+   [
+    81.0,
+    1.0
+   ],
+   [
+    88.0,
+    0.0
+   ],
+   [
+    93.0,
+    0.0
+   ],
+   [
+    97.0,
+    0.0
+   ]
+  ]
+ },
+ "trap_trunc_date_range": {
+  "ordered": false,
+  "rows": [
+   [
+    "HYDRANT",
+    9.0
+   ],
+   [
+    "SIDE_SEWER",
+    4.0
+   ],
+   [
+    "STREET_USE",
+    13.0
+   ],
+   [
+    "WAC",
+    11.0
+   ]
+  ]
+ },
+ "trap_date_subtraction": {
+  "ordered": false,
+  "rows": [
+   [
+    "HYDRANT",
+    62.017961
+   ],
+   [
+    "SIDE_SEWER",
+    58.555412
+   ],
+   [
+    "STREET_USE",
+    63.048925
+   ],
+   [
+    "WAC",
+    61.501243
+   ]
+  ]
+ },
+ "trap_implicit_numeric": {
+  "ordered": false,
+  "rows": [
+   [
+    21.0,
+    "1001"
+   ],
+   [
+    22.0,
+    "001001"
+   ],
+   [
+    23.0,
+    "1002"
+   ],
+   [
+    24.0,
+    "001002"
+   ],
+   [
+    25.0,
+    "001003"
+   ],
+   [
+    26.0,
+    "1003"
+   ]
+  ]
+ },
+ "trap_add_months_eom": {
+  "ordered": false,
+  "rows": [
+   [
+    105.0,
+    "2026-03-31 00:00:00"
+   ],
+   [
+    11.0,
+    "2025-10-31 00:00:00"
+   ],
+   [
+    118.0,
+    "2026-08-31 00:00:00"
+   ],
+   [
+    12.0,
+    "2025-12-31 00:00:00"
+   ],
+   [
+    13.0,
+    "2026-03-31 00:00:00"
+   ],
+   [
+    14.0,
+    "2026-05-31 00:00:00"
+   ],
+   [
+    15.0,
+    "2026-07-31 00:00:00"
+   ],
+   [
+    17.0,
+    "2026-10-31 00:00:00"
+   ],
+   [
+    208.0,
+    "2026-07-31 00:00:00"
+   ],
+   [
+    289.0,
+    "2025-08-31 00:00:00"
+   ],
+   [
+    3.0,
+    "2025-11-30 00:00:00"
+   ],
+   [
+    315.0,
+    "2026-03-31 00:00:00"
+   ],
+   [
+    339.0,
+    "2026-06-30 00:00:00"
+   ],
+   [
+    366.0,
+    "2026-03-31 00:00:00"
+   ]
+  ]
+ },
+ "trap_to_char_mon": {
+  "ordered": false,
+  "rows": [
+   [
+    "APR-2026",
+    39.0
+   ],
+   [
+    "AUG-2025",
+    33.0
+   ],
+   [
+    "DEC-2025",
+    37.0
+   ],
+   [
+    "FEB-2026",
+    31.0
+   ],
+   [
+    "JAN-2026",
+    37.0
+   ],
+   [
+    "JUL-2025",
+    24.0
+   ],
+   [
+    "JUN-2026",
+    41.0
+   ],
+   [
+    "MAR-2026",
+    28.0
+   ],
+   [
+    "MAY-2026",
+    31.0
+   ],
+   [
+    "NOV-2025",
+    29.0
+   ],
+   [
+    "OCT-2025",
+    42.0
+   ],
+   [
+    "SEP-2025",
+    28.0
+   ]
+  ]
+ },
+ "trap_null_ordering": {
+  "ordered": true,
+  "rows": [
+   [
+    1.0,
+    null
+   ],
+   [
+    4.0,
+    null
+   ],
+   [
+    6.0,
+    null
+   ],
+   [
+    10.0,
+    null
+   ],
+   [
+    18.0,
+    null
+   ]
+  ]
+ },
+ "trap_substr_zero": {
+  "ordered": false,
+  "rows": [
+   [
+    "0420",
+    67.0
+   ],
+   [
+    "1937",
+    66.0
+   ],
+   [
+    "2588",
+    63.0
+   ],
+   [
+    "3301",
+    76.0
+   ],
+   [
+    "5466",
+    63.0
+   ],
+   [
+    "7720",
+    65.0
+   ]
+  ]
+ }
+}
